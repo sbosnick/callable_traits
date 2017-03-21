@@ -8,4 +8,6 @@ if not meson.is_subproject()
     error('The meson support for callable_traits is designed for using callable_traits as a subproject.')
 endif
 
-callable_traits = declare_dependency(include_directories:'include')
+callable_traits_inc = include_directories('include')
+
+callable_traits_dep = declare_dependency(include_directories:callable_traits_inc)
